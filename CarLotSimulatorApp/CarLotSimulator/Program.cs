@@ -41,9 +41,13 @@ namespace CarLotSimulator
             };
             carLot.CarToList = secondCar;
 
-            Car thirdCar = new Car(1908, "Ford", "Model T");
+            Car thirdCar = new Car (1908, "Ford", "Model T");
             thirdCar.IsDriveable = false;
             carLot.CarToList = thirdCar;
+
+            Car fourthCar = new Car (2011, "Hyundai", "Sonata", "vrooom", "beep");
+            Car fifthCar = new Car (2005, "Honda", "Civic", "vrooom", "beep");
+            Car sixthCar = new Car(2013, "Jeep", "Wrangler", "brrrr", "beeep");
 
             firstCar.MakeEngineNoise();
             firstCar.MakeHonkNoise();
@@ -65,6 +69,9 @@ namespace CarLotSimulator
             //Instantiate the Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
             carLot.DescribeCars();
+
+            if (CarLot.numberOfCars == 1) Console.WriteLine($"\n There is {CarLot.numberOfCars} car in the car lot.");
+            else Console.WriteLine($"\nThere are {CarLot.numberOfCars} cars in the car lot.");
         }
     }
 }
